@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="app-title">🌿 Plant Care Assistant</h1>
+            <p class="app-subtitle">Keep your green friends happy and healthy</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Add Plant Form -->
+            <section class="add-plant-section">
+                <h2 class="section-title">Add New Plant</h2>
+                <form id="plantForm" class="plant-form">
+                    <div class="form-group">
+                        <label for="plantName">Plant Name</label>
+                        <input type="text" id="plantName" name="plantName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="plantType">Plant Type</label>
+                        <input type="text" id="plantType" name="plantType" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="wateringFrequency">Watering Frequency (days)</label>
+                        <input type="number" id="wateringFrequency" name="wateringFrequency" min="1" max="30" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="plantPhoto">Plant Photo (optional)</label>
+                        <input type="file" id="plantPhoto" name="plantPhoto" accept="image/*">
+                        <div class="photo-preview" id="photoPreview"></div>
+                    </div>
+                    
+                    <button type="submit" class="add-plant-btn">🌱 Add Plant</button>
+                </form>
+            </section>
+
+            <!-- Plant List -->
+            <section class="plants-section">
+                <h2 class="section-title">Your Plants</h2>
+                <div id="plantsList" class="plants-grid"></div>
+                <div id="emptyState" class="empty-state">
+                    <p>No plants yet! Add your first plant above to get started. 🌱</p>
+                </div>
+            </section>
+
+            <!-- Calendar View -->
+            <section class="calendar-section">
+                <h2 class="section-title">Watering Calendar (Next 30 Days)</h2>
+                <div id="calendar" class="calendar-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

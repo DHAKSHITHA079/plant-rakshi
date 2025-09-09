@@ -1,0 +1,380 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #a3d2ca 0%, #5eaaa8 50%, #6a5acd 100%);
+    min-height: 100vh;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(163, 210, 202, 0.3);
+}
+
+.app-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d5a4a;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-subtitle {
+    font-size: 1.2rem;
+    color: #5a6c7d;
+    font-weight: 300;
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2d5a4a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Add Plant Form */
+.add-plant-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(163, 210, 202, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.plant-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #2d5a4a;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #5eaaa8;
+    box-shadow: 0 0 0 3px rgba(94, 170, 168, 0.1);
+    background: white;
+}
+
+.form-group input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #5eaaa8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #2d5a4a;
+    background: rgba(94, 170, 168, 0.1);
+}
+
+.photo-preview {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.photo-preview img {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 12px;
+    border: 3px solid #a3d2ca;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-plant-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #5eaaa8, #6a5acd);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(94, 170, 168, 0.3);
+}
+
+.add-plant-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(94, 170, 168, 0.4);
+}
+
+.add-plant-btn:active {
+    transform: translateY(0);
+}
+
+/* Plants Grid */
+.plants-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(163, 210, 202, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.plants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.plant-card {
+    background: linear-gradient(135deg, #ffffff, #f8fffe);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(163, 210, 202, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(163, 210, 202, 0.2);
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(163, 210, 202, 0.25);
+}
+
+.plant-photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 2px solid rgba(163, 210, 202, 0.3);
+}
+
+.plant-photo.default {
+    background: linear-gradient(135deg, #a3d2ca, #5eaaa8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: white;
+}
+
+.plant-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d5a4a;
+    margin-bottom: 8px;
+}
+
+.plant-type {
+    font-size: 1rem;
+    color: #5a6c7d;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.plant-frequency {
+    background: linear-gradient(135deg, #a3d2ca, #5eaaa8);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.delete-btn:hover {
+    background: #ff5252;
+    transform: scale(1.1);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #5a6c7d;
+    font-size: 1.1rem;
+}
+
+/* Calendar */
+.calendar-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(163, 210, 202, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.calendar-day {
+    background: linear-gradient(135deg, #ffffff, #f8fffe);
+    border: 2px solid rgba(163, 210, 202, 0.2);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calendar-day:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(163, 210, 202, 0.2);
+}
+
+.calendar-day.has-watering {
+    background: linear-gradient(135deg, #a3d2ca, #5eaaa8);
+    color: white;
+    border-color: #5eaaa8;
+}
+
+.day-date {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.day-events {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.watering-event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.calendar-day:not(.has-watering) .watering-event {
+    background: rgba(163, 210, 202, 0.1);
+    color: #2d5a4a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .app-title {
+        font-size: 2.2rem;
+    }
+    
+    .plant-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .plants-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    .calendar-day {
+        min-height: 70px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .calendar-day {
+        min-height: 60px;
+        padding: 6px;
+    }
+    
+    .day-date {
+        font-size: 0.8rem;
+    }
+    
+    .watering-event {
+        font-size: 0.7rem;
+        padding: 2px 4px;
+    }
+}
